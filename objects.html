@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      // 1. exercise
+
+      function objectHasProperty(object, propertyName) {
+        var keys = Object.keys(object);
+        return keys.indexOf(propertyName) !== -1;
+      }
+
+     // 2. exercise
+
+     function incrementProperty(object, key) {
+        var keys = Object.keys(object);
+        if (keys.indexOf(key) !== -1) {
+          object[key] += 1;
+        } else {
+          object[key] = 1;
+        }
+
+        return object;
+     }
+
+    // 3. exercise
+
+    function copyProperties(object1, object2) {
+      var object1Key;
+      var copied = 0;
+      for (object1Key in object1) {
+        object2[object1Key] = object1[object1Key];
+        copied += 1
+      }
+
+      return copied;
+    }
+    
+    // 4. exercise
+
+    function wordCount(string) {
+      var result = {};
+
+      var words = string.split(' ');
+      var i;
+
+      for (i = 0; i < words.length; i += 1) {
+        if (result[words[i]]) {
+          result[words[i]] += 1;
+        } else {
+          result[words[i]] = 1;
+        }
+      }
+
+      return console.log(result);
+    }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
