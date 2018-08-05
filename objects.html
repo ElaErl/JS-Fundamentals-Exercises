@@ -58,6 +58,45 @@
       return console.log(result);
     }
 
+    // 5. exercise
+
+    var myObject = {
+      prop1: '123',
+      prop2: '234',
+      'prop 3': '345',
+    };
+
+    var prop2 = '456';
+    myObject['prop2'] = '456';
+    myObject[prop2] = '678';
+
+    // 6. exercise
+
+    function timeOfDay(minutes) {
+      var event = new Date('August 19, 1975 00:00:00');
+
+      event.setMinutes(minutes);
+
+      var hours = event.getHours();
+      var minutes = event.getMinutes();
+
+      if (String(minutes).length === 1) {
+        minutes = '0' + minutes;
+      }
+
+      if (String(hours).length === 1) {
+        hours = '0' + hours;
+      }
+
+      console.log(hours + ':' + minutes);
+    }
+
+    // 7. exercise
+
+    
+
+
+
     </script>
   </body>
 </html>

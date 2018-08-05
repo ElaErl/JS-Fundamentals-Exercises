@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      // 1. exercise
+
+      function greetings(array, object) {
+        console.log('Hello, ' + array.join(' ') + '! ' + 'Nice to have a ' + object['title'] + ' ' + object['occupation'] + ' around.');
+      }
+
+      // 2. exercise
+
+      function repeatedCharacters(string) {
+        var string = string.toLowerCase();
+        var arr = string.split('');
+        var i;
+        var countChars = {};
+        var result = {};
+
+        for (i = 0; i < arr.length; i += 1) {
+          if (countChars[arr[i]]) {
+            countChars[arr[i]] += 1;
+          } else {
+            countChars[arr[i]] = 1;
+          }
+        }
+
+        for (letter in countChars) {
+          if (countChars[letter] >= 2) {
+            result[letter] = countChars[letter];
+          }
+        }
+
+        return result;
+      }
+
+    </script>
+  </body>
+</html>
