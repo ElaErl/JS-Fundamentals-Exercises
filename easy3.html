@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      // 1. exercise
+
+      function teddyAge() {
+        var difference;
+        var randomNumber;
+        var min = 20;
+        var max = 200;
+
+        difference = max - min + 1; 
+        randomNumber = Math.floor(Math.random() * difference) + min;
+
+        console.log('Teddy is ' + randomNumber + ' years old!')
+      }
+
+      // 2. exercise
+
+      function repeatedNumber() {
+        var a = prompt('Enter the 1st number');
+        var b = prompt('Enter the 2nd number');
+        var c = prompt('Enter the 3rd number');
+        var d = prompt('Enter the 4th number');
+        var e = prompt('Enter the 5th number');
+        var lastNumber = prompt('Enter the last number');
+        var arrayOfNums = [];
+
+        arrayOfNums.push(a);
+        arrayOfNums.push(b);
+        arrayOfNums.push(c);
+        arrayOfNums.push(d);
+        arrayOfNums.push(e);
+
+        if (arrayOfNums.includes(lastNumber)) {
+          return 'The number ' + lastNumber + ' appears in [' + arrayOfNums.join(', ') + '].';
+        } else {
+          return 'The number ' + lastNumber + " doesn't appear in [" + arrayOfNums.join(', ') + '].';
+        }
+      }
+
+      // 3. exercise
+
+      function retirement() {
+        var age = prompt('What is your age?');
+        var retireAge = prompt('At what age would you like to retire?');
+        var today = new Date();
+        var year = today.getFullYear();
+        var yearsLeft = retireAge - age;
+        var retireYear = year + yearsLeft;
+
+        console.log("It's " + year + '. ' + 'You will retire in ' + retireYear + '.');
+        console.log('You have only ' + yearsLeft + ' years of work to go!');
+      }
+
+      // 4. exercise
+
+      function isPalindrome(string) {
+        return string === string.split('').reverse().join('');
+      }
+
+      // function isPalindrome(string) {
+      //   var array = string.split('');
+      //   var i;
+
+      //   if (array.length % 2 === 0) {
+      //     for (i = 0; i < array.length / 2; i += 1) {
+      //       if (array[i] !== array.slice(- i - 1)[0]) {
+      //         return false;
+      //       }
+      //     }
+      //   } else {
+      //     for (i = 0; i <= array.length / 2; i += 1) {
+      //       if (array[i] !== array.slice(- i - 1)[0]) {
+      //         return false;
+      //       }
+      //     }
+      //   }
+
+      //   return true;
+      // }
+
+      // 5. exercise
+
+      function isRealPalindrome(string) {
+        var string = string.toLowerCase();
+        var array = string.split('');
+        var i;
+        var newString = '';
+
+        for (i = 0; i < array.length; i += 1) {
+          if ((array[i] >= 'a' && array[i] <= 'z') ||
+              (array[i] >= '0' && array[i] <= '9')) {
+            newString += array[i];
+          }
+        }
+
+        return isPalindrome(newString);
+      }
+
+      // 6. exercise
+
+      function isPalindromicNumber(number) {
+        var string = String(number);
+        return isRealPalindrome(string);
+      }
+
+      // 7. exercise
+
+      function runningTotal(array) {
+        var i;
+        var sum = 0;
+        var result = [];
+
+        for (i = 0; i < array.length; i += 1) {
+          sum += array[i];
+          result.push(sum);
+        }
+
+        return result;
+      }
+
+      // 8. exercise
+
+      // function swap(string) {
+      //   var array = string.split(' ');
+      //   var i;
+      //   var y;
+      //   var result = '';
+
+      //   for (i = 0; i < array.length; i += 1) {
+      //     for (y = array[i].length - 1; y >= 0; y -= 1) {
+      //       result += array[i][y];
+      //     }
+
+      //     result += ' ';
+      //   }
+
+      //   return result;
+      // }
+
+      function swap(string) {
+        var i;
+        var array = string.split(' ');
+
+        for (i = 0; i < array.length; i += 1) {
+          array[i] = swapFirstLast(array[i])
+        }
+
+        return array.join(' ');   
+      }
+
+      function swapFirstLast(word) {
+        if (word.length === 1) {
+          return word;
+        }
+
+        return word.slice(-1) + word.slice(1, -1) + word[0];
+      }
+
+      // 9. exercise
+
+      // function wordSizes(string) {
+      //   var wordArray = string.split(' ');
+      //   var result = {};
+      //   var i;
+
+      //   for (i = 0; i < wordArray.length; i += 1) {
+      //     if (wordArray[i].length === 0) {
+      //       continue;
+      //     }
+
+      //     if (!result[wordArray[i].length]) {
+      //       result[wordArray[i].length] = 1;
+      //     } else {
+      //       result[wordArray[i].length] += 1;
+      //     }
+      //   }
+
+      //   return console.log(result);
+      // }
+
+      // 10. exercise
+
+      function wordSizes(string) {
+        var string = alphabethCharsAndSpaces(string);
+        var wordArray = string.split(' ');
+        var result = {};
+        var i;
+
+        for (i = 0; i < wordArray.length; i += 1) {
+          if (wordArray[i].length === 0) {
+            continue;
+          }
+
+          if (!result[wordArray[i].length]) {
+            result[wordArray[i].length] = 1;
+          } else {
+            result[wordArray[i].length] += 1;
+          }
+        }
+
+        return result;
+      }
+
+      function alphabethCharsAndSpaces(string) {
+        var newString = '';
+        var i;
+
+        for (i = 0; i < string.length; i += 1) {
+          if ((string[i] >= 'A' && string[i] <= 'Z') ||
+            (string[i] >= 'a' && string[i] <= 'z') ||
+            (string[i] === ' ')) {
+            newString += string[i];
+          }
+        }
+
+        return newString;
+      }
+    </script>
+  </body>
+</html>

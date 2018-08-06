@@ -93,9 +93,35 @@
 
     // 7. exercise
 
-    
+      function invoiceTotal() {
+        var total = 0;
+        var i;
 
+        for (i = 0; i < arguments.length; i += 1) {
+          total += arguments[i];
+        }
 
+        return total;
+      }
+
+    // 8. exrcise
+
+    function productOfSums(array1, array2) {
+      var result;
+      result = total(array1) * total(array2);
+      return result;
+    }
+
+    function total(numbers) {
+      var sum = 0;
+      var i;
+
+      for (i = 0; i < numbers.length; i += 1) {
+        sum += numbers[i];
+      }
+
+      return sum;
+    }
 
     </script>
   </body>
