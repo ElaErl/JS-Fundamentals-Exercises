@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      // 1. exercise
+
+      function doubleConsonants(string) {
+        var CONSONANTS = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+
+        var result = '';
+        var i;
+
+        for (i in string) {
+          if (CONSONANTS.includes(string[i].toLowerCase())) {
+            result += string[i] + string[i];
+          } else {
+            result += string[i];
+          }
+        }
+
+        return result;
+      }
+
+      // 2. exercise
+
+      function reverseNumber(num) {
+        return Number(String(num).split('').reverse().join(''));
+      }
+
+      // 3. exercise
+
+      function centerOf(string) {
+        if (string.length % 2 === 1) {
+          return string[Math.floor(string.length / 2)];
+        } else {
+          return string.substr(string.length / 2 - 1, 2);
+        }
+      }
+
+      // 4. exercise
+
+      function negative(num) {
+        return num >= 0 ? -num : num;
+      }
+
+      // or:
+
+      function negative(number) {
+        return Math.abs(number) * -1;
+      }
+
+      // 5. exercise
+
+      function sequence(num) {
+        var i;
+        var result = [];
+
+        for (i = 1; i <= num; i += 1) {
+          result.push(i);
+        }
+
+        return result;
+      }
+
+      // 6. exercise
+
+      function swapName(name) {
+        return name.split(' ').reverse().join(', ');
+      }
+
+      // 7. exercise
+
+      function sequence(length, start) {
+        var result = [];
+        var product = 1;
+        var i;
+
+        for (i = 1; i <= length; i += 1) {
+          product = start * i;
+          result.push(product);
+        }
+
+        return result;
+      }
+
+      // 8. exercise
+
+      function reverseSentence(string) {
+        return console.log(string.split(' ').reverse().join(' '));
+      }
+
+      // 9. exercise
+
+      function reverseWords(string) {
+        var result = [];
+        var arr = string.split(' ');
+        var i;
+
+        for (i = 0; i < arr.length; i += 1) {
+          if (arr[i].length >= 5) {
+            result.push(arr[i].split('').reverse().join(''));
+          } else {
+            result.push(arr[i])
+          }
+        }
+
+        return result.join(' ');
+      }
+
+    </script>
+  </body>
+</html>

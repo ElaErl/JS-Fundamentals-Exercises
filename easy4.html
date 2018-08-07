@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      // 1. exercise
+
+      function dms(degrees) {
+        var roundedDegrees = Math.floor(degrees);
+        var difference = degrees - roundedDegrees;
+        var minutes = Math.floor(difference * 60);
+        var difference1 = (difference * 60) - minutes;
+        var seconds = Math.floor(difference1 * 60);
+
+        return roundedDegrees + '°' + addZeros(minutes) + "'" + addZeros(seconds) + '"';
+      }
+
+      function addZeros(number) {
+        var string = String(number);
+        return string.length < 2 ? '0' + string : string
+      }
+
+      // 2. exercise
+
+      function union(arr1, arr2) {
+        var result = [];
+        var i;
+
+        for (i = 0; i < arr1.length; i += 1) {
+          if (!result.includes(arr1[i])) {
+            result.push(arr1[i]);
+          }
+        }
+
+        for (i = 0; i < arr2.length; i += 1) {
+          if (!result.includes(arr2[i])) {
+            result.push(arr2[i]);
+          }
+        }
+
+        return result;
+      }
+
+      // 3. exercise
+
+      function halvsies(arr) {
+        var result = [];
+        var middleIndex = Math.ceil((arr.length / 2));
+        result.push(arr.slice(0, middleIndex));
+        result.push(arr.slice(middleIndex));
+        
+        return console.log(result);
+      }
+
+      // 4. exercise
+
+      function findDup(array) {
+        var newArr = [];
+        var i;
+
+        for (i = 0; i < array.length; i += 1) {
+          if (!newArr.includes(array[i])) {
+            newArr.push(array[i]);
+          } else {
+            return array[i];
+          }
+        }
+      }
+
+      // 5. exercise
+
+      function interleave(arr1, arr2) {
+        var result = [];
+        var i;
+
+        for (i = 0; i < arr1.length; i += 1) {
+          result.push(arr1[i], arr2[i]);
+        }
+
+        return result;
+      }
+
+      // 6. exercise
+
+      function showMultiplicativeAverage(arr) {
+        var product = 1;
+        var i;
+        var result;
+
+        for (i = 0; i < arr.length; i += 1) {
+          product *= arr[i];
+        }
+
+        result = (product / arr.length).toFixed(3);
+        return result;
+      }
+
+      // 7. exercise
+
+      function multiplyList(arr1, arr2) {
+        var result = [];
+        var i;
+
+        for (i = 0; i < arr1.length; i += 1) {
+          result.push(arr1[i] * arr2[i]);
+        }
+
+        return result;
+      }
+
+      // 8. exercise
+
+      function digitList(number) {
+        var string = String(number);
+        var i;
+        var result = [];
+
+        for (i = 0; i < string.length; i += 1) {
+          result.push(Number(string[i]));
+        }
+
+        return result;
+      }
+
+      // 9. exercise
+
+      function countOccurrences(arr) {
+        var result = {};
+        var i;
+        var item;
+
+        for (i = 0; i < arr.length; i += 1) {
+          result[arr[i]] = result[arr[i]] || 0;
+          result[arr[i]] += 1;
+        }
+
+        for (item in result) {
+          console.log(item + ' => ' + result[item]);
+        }
+      }
+
+      // 10. exercise
+
+      function average(arr) {
+        var sum = 0;
+        var average;
+        var i;
+
+        for (i = 0; i < arr.length; i += 1) {
+          sum += arr[i];
+        }
+
+        average = Math.floor(sum / arr.length);
+
+        return average;
+      }
+
+      // 11. exercise
+
+      function repeater(string) {
+        var result = '';
+        var i;
+
+        if (string === '') {
+          return string;
+        }
+
+        for (i in string) {
+          result += string[i] + string[i];
+        }
+
+        return console.log(result);
+      }
+
+    </script>
+  </body>
+</html>
