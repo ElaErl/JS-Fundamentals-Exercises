@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      // 1. exercise
+
+      function doubler(number, caller) {
+        console.log('This function was called by ' + caller + '.');
+        return number + number;
+      }
+
+      // 2. exercise
+
+      function makeDoubler(caller) {
+        return function (number) {
+          console.log('This function was called by ' + caller + '.');
+          return number + number;
+        };
+      }
+
+      // 3. exercise
+
+      var myArray = [1, 2, 3, 4];
+      var myOtherArray = myArray;
+
+      // myArray.pop();
+      // console.log(myOtherArray);
+
+      // myArray = [1, 2];
+      // console.log(myOtherArray);
+
+      // 4. exercise: In the previous exercise, the value of the reference gets copied. For this exercise, only the values of the array should be copied, but not the reference. Implement two alternative ways of doing this.
+
+      var myArray = [1, 2, 3, 4];
+      var myOtherArray = [];
+      var i;
+
+      for (i = 0; i < myArray.length; i += 1) {
+        myOtherArray.push(myArray[i]);
+      }
+
+      // myArray.pop();
+      // console.log(myArray);               // [1, 2, 3]
+      // console.log(myOtherArray);          // [1, 2, 3, 4]
+
+
+      // Alternative
+
+      var myArray = [1, 2, 3, 4];
+      var myOtherArray = myArray.slice();
+
+      myArray.pop();
+      // console.log(myArray);               // [1, 2, 3]
+      // console.log(myOtherArray);          // [1, 2, 3, 4]
+
+    </script>
+  </body>
+</html>
